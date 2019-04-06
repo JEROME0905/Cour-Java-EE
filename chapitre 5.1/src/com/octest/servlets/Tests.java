@@ -17,16 +17,28 @@ public class Tests extends HttpServlet {
     private UtilisateurDao utilisateurDao;
 
     public void init() throws ServletException {
+
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.utilisateurDao = daoFactory.getUtilisateurDao();
-    }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("utilisateurs", utilisateurDao.lister());
-        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setNom(request.getParameter("nom"));
+        utilisateur.setPrenom(request.getParameter("prenom"));
+
+        utilisateurDao.ajouter(utilisateur);
+
+        request.setAttribute("utilisateurs", utilisateurDao.lister());
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
+
+        request.setAttribute("utilisateurs", utilisateurDao.lister());
+        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
+
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Utilisateur utilisateur = new Utilisateur();
         utilisateur.setNom(request.getParameter("nom"));
         utilisateur.setPrenom(request.getParameter("prenom"));

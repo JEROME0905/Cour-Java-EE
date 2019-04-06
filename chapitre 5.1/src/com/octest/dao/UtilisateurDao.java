@@ -8,3 +8,4 @@ public interface UtilisateurDao {
     void ajouter( Utilisateur utilisateur );
     List<Utilisateur> lister();
 }
+
