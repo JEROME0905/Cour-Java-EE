@@ -24,15 +24,6 @@ public class Tests extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Utilisateur utilisateur = new Utilisateur();
-        utilisateur.setNom(request.getParameter("nom"));
-        utilisateur.setPrenom(request.getParameter("prenom"));
-
-        utilisateurDao.ajouter(utilisateur);
-
-        request.setAttribute("utilisateurs", utilisateurDao.lister());
-
-        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 
         request.setAttribute("utilisateurs", utilisateurDao.lister());
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
