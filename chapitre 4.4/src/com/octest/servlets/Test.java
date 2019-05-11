@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @WebServlet(name = "Test")
 public class Test extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void  doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupération des cookies dans un tableau
         Cookie[] cookies = request.getCookies();
 
@@ -28,7 +28,8 @@ public class Test extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         // Recuperation du nom et du prenom grace au formulaire.
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
@@ -41,7 +42,6 @@ public class Test extends HttpServlet {
 
         // Stockage du prenom du visiteur
         response.addCookie(cookie);
-
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 
     }

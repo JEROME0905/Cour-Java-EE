@@ -11,6 +11,8 @@
     <p>Vous êtes ${ sessionScope.prenom } ${sessionScope.nom } ! </p>
 
 </c:if>
+
+
 <form method="post" action="bonjour">
     <p>
         <label for="nom">Nom : </label>

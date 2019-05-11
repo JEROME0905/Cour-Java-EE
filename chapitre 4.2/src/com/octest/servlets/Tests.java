@@ -16,12 +16,11 @@ public class Tests extends HttpServlet {
     public static final String CHEMIN_FICHIERS = "/Users/jerom/fichiers/"; // A changer
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
-
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // On récupère le champ description comme d'habitude
         String description = request.getParameter("description");
         request.setAttribute("description", description );

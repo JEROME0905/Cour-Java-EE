@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @WebServlet(name = "Tests")
 public class Tests extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // création d'un objet session pour récupérer les éléments de la session
         HttpSession session = request.getSession();
 
@@ -19,13 +19,11 @@ public class Tests extends HttpServlet {
 
         // Suppression de la session par cette ligne de code ou part le tmeout du serveur si l'utilisatur est inactif pendant un certain temps.
         session.invalidate();
-
-
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // récupération du nom et du prenom envoyé par le formulaire
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");

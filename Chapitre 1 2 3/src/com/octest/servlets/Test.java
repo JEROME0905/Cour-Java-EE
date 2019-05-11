@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet(name = "Test")
 public class Test extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Objet request indique les paramètres que l'utilisateur à pu envoyer.
         // Objet que l'on construit pour renvoyer une page.
 
@@ -51,13 +51,14 @@ public class Test extends HttpServlet {
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // LES FORMULAIRES AVEC JAVA EE
         // Récupéaration des données du formulaire
 
         String nom = request.getParameter("nom");
         request.setAttribute("nom", nom);
 
+        System.out.println(nom);
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 
     }

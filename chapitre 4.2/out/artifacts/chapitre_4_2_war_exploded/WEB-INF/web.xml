@@ -19,6 +19,7 @@
             <file-size-threshold>1048576</file-size-threshold>
         </multipart-config>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>Tests</servlet-name>
         <url-pattern>/bonjour</url-pattern>
