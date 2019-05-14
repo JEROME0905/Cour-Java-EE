@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.octest.beans.BeanException;
 import com.octest.beans.Utilisateur;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
@@ -15,7 +14,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     }
 
     @Override
-    public void ajouter(Utilisateur utilisateur) throws DaoException {
+    public void ajouter(Utilisateur utilisateur) {
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
 
@@ -25,31 +24,16 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
             preparedStatement.setString(1, utilisateur.getNom());
             preparedStatement.setString(2, utilisateur.getPrenom());
 
+            // Execution de la requête préparée
             preparedStatement.executeUpdate();
-            connexion.commit(); // Permet d'enregistrer définitivement les informations dans la base de données
         } catch (SQLException e) {
-            try {
-                if (connexion != null) {
-                    connexion.rollback(); // Si il y a eu un problème avec ma connexion je fais un rollback pour anuler toutes les midifications pour quelles ne soient pas écrtitent sur le disque.
-                }
-            } catch (SQLException e2) {
-            }
-            throw new DaoException("Impossible de communiquer avec la base de données");
-        }
-        finally {
-            try {
-                if (connexion != null) {
-                    connexion.close();  
-                }
-            } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de données");
-            }
+            e.printStackTrace();
         }
 
     }
 
     @Override
-    public List<Utilisateur> lister() throws DaoException {
+    public List<Utilisateur> lister() {
         List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
         Connection connexion = null;
         Statement statement = null;
@@ -71,18 +55,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 utilisateurs.add(utilisateur);
             }
         } catch (SQLException e) {
-            throw new DaoException("Impossible de communiquer avec la base de données");
-        } catch (BeanException e) {
-            throw new DaoException("Les données de la base sont invalides");
-        }
-        finally {
-            try {
-                if (connexion != null) {
-                    connexion.close();  
-                }
-            } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de données");
-            }
+            e.printStackTrace();
         }
         return utilisateurs;
     }

@@ -17,20 +17,19 @@ public class DaoFactory {
 
     public static DaoFactory getInstance() {
         try {
+            // Chargement du driver jdbc pour se connecter à la base de données
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
 
         }
 
         DaoFactory instance = new DaoFactory(
-                "jdbc:mysql://localhost:3306/javaee?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC", "root", "");
+                "jdbc:mysql://localhost:3306/javaee?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC", "root", "Python2351;");
         return instance;
     }
 
     public Connection getConnection() throws SQLException {
-        Connection connexion = DriverManager.getConnection(url, username, password);
-        connexion.setAutoCommit(false);
-        return connexion; 
+        return DriverManager.getConnection(url, username, password);
     }
 
     // Récupération du Dao
