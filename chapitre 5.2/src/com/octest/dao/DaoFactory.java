@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DaoFactory {
+
     private String url;
     private String username;
     private String password;
@@ -29,7 +30,9 @@ public class DaoFactory {
     }
 
     public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(url, username, password);
+        Connection connexion = DriverManager.getConnection(url, username, password);
+        connexion.setAutoCommit(false); // Ajout d'un setAutoCommit(false) après la connexion pour que l'on puisse gérer les transactions nous-mêmes.
+        return connexion;
     }
 
     // Récupération du Dao
@@ -37,3 +40,4 @@ public class DaoFactory {
         return new UtilisateurDaoImpl(this);
     }
 }
+

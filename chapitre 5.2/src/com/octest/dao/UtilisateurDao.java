@@ -5,7 +5,7 @@ import java.util.List;
 import com.octest.beans.Utilisateur;
 
 public interface UtilisateurDao {
-    void ajouter( Utilisateur utilisateur );
-    List<Utilisateur> lister();
+    void ajouter( Utilisateur utilisateur ) throws DaoException;
+    List<Utilisateur> lister() throws DaoException;
 }
 

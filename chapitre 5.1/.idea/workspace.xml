@@ -7,22 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e82d88aa-4f6b-45fa-bf9a-aefe1a11b39d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../chapitre 5.2/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/chapitre_5_1_war_exploded/WEB-INF/classes/com/octest/servlets/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/chapitre_5_1_war_exploded/WEB-INF/classes/com/octest/servlets/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chapitre 5.1/com/octest/servlets/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chapitre 5.1/com/octest/servlets/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/bdd/Noms.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/beans/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/beans/Utilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/DaoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/UtilisateurDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/UtilisateurDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/UtilisateurDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/dao/UtilisateurDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/servlets/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/servlets/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/servlets/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/src/com/octest/servlets/Tests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapitre 5.2/web/WEB-INF/bonjour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/web/WEB-INF/bonjour.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chapitre 5.2/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chapitre 5.2/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../chapitre 5.2/web/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -340,12 +331,12 @@
       <workItem from="1554536873331" duration="9574000" />
       <workItem from="1557419015465" duration="759000" />
       <workItem from="1557755143417" duration="4757000" />
-      <workItem from="1557845556451" duration="493000" />
+      <workItem from="1557845556451" duration="1085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16533000" />
+    <option name="totallyTimeSpent" value="17125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-727" y="-1440" width="1268" height="1410" extended-state="0" />
