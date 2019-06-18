@@ -1,20 +1,24 @@
 package com.octest.servlets;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
 
+
+@MultipartConfig
 public class Tests extends HttpServlet {
 
     // permet de faire la copie du fichier temporaire vers le dossier finale
     public static final int TAILLE_TAMPON = 10240;
 
     // Indique l'adresse finale de stockage de tous les fichiers.
-    public static final String CHEMIN_FICHIERS = "/Users/jerom/fichiers/"; // A changer
+    public static final String CHEMIN_FICHIERS = "d:/Projet git/Cour-Java-EE/chapitre 4.2"; // A changer
 
+    /*/Users/lebai/fichiers/*/
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
@@ -23,12 +27,15 @@ public class Tests extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // On récupère le champ description comme d'habitude
         String description = request.getParameter("description");
-        request.setAttribute("description", description );
 
+        request.setAttribute("description", description );
+        System.out.println(description);
 
         // On récupère le champ du fichier
         // Utilistion de la classe Part pour récupérer le fichier
         Part part = request.getPart("fichier");
+
+        System.out.println(part);
 
         // On vérifie qu'on a bien reçu un fichier
         String nomFichier = getNomFichier(part);
@@ -45,9 +52,10 @@ public class Tests extends HttpServlet {
 
             request.setAttribute(nomChamp, nomFichier);
         }
-
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
+
+
     // Traitement du fichier
     private void ecrireFichier( Part part, String nomFichier, String chemin ) throws IOException {
         BufferedInputStream entree = null;
