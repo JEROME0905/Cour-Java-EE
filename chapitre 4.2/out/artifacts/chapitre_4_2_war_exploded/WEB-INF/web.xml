@@ -13,10 +13,28 @@
         <servlet-name>Tests</servlet-name>
         <servlet-class>com.octest.servlets.Tests</servlet-class>
         <multipart-config>
+
             <location>d:/Projet git/editeur-de-sous-titres/web/WEB-INF/fichierstmp/</location>
+            <!-- <location> contient une URL absolue vers un répertoire du système. Un chemin relatif au
+            contexte de l'application n'est pas supporté dans cette balise, il s'agit bien là d'un chemin
+            absolu vers le système. Cette URL sera utilisée pour stocker temporairement un fichier lors du
+            traitement des fragments d'une requête, lorsque la taille du fichier est plus grande que la taille
+            spécifiée dans <file-size-threshold>. Si vous précisez ici un répertoire qui n'existe pas sur le disque,
+            alors Tomcat enverra une java.io.IOException lorsque vous tenterez d'envoyer un fichier plus gros que
+            cette limite -->
+
             <max-file-size>10485760</max-file-size>
+            <!-- <file-size-threshold> précise la taille en octets à partir de laquelle un fichier reçu sera temporairement stocké sur le disque. -->
+
             <max-request-size>52428800</max-request-size>
+            <!-- <max-file-size> précise la taille maximum en octets autorisée pour un fichier envoyé. Si la taille
+            d'un fichier envoyé dépasse cette limite, le conteneur enverra une exception. En l'occurrence, Tomcat lancera une IllegalStateException.  -->
+
             <file-size-threshold>1048576</file-size-threshold>
+             <!-- <max-request-size> précise la taille maximum en octets autorisée pour une requête
+             multipart/form-data. Si la taille totale des données envoyées dans une seule requête dépasse
+             cette limite, le conteneur enverra une exception. -->
+
         </multipart-config>
     </servlet>
 
